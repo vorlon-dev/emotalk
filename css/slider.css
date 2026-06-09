@@ -1,0 +1,30 @@
+/* === css/slider.css === */
+/*
+ * Screenshot slider inside the phone mockup.
+ * The container now matches the new phone dimensions perfectly.
+ * Screenshots of 700×1600 will display edge‑to‑edge with object‑fit: cover.
+ */
+
+#phone-slider {
+    position: absolute;
+    inset: 8px;                     /* same as .phone-wrapper::after inset */
+    border-radius: 16px;            /* inner screen corner radius */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.phone-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* now perfectly matches because aspect ratio is identical */
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+.phone-slide.active {
+    opacity: 1;
+}

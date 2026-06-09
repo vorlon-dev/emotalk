@@ -1,0 +1,109 @@
+/* === css/download.css === */
+/*
+ * CTA download section with animated gradient border card.
+ * HTML expectations:
+ *   <section id="download" class="section">
+ *     <div class="cta-card">
+ *       <div class="cta-card-inner">
+ *         <span class="section-eyebrow">...</span>
+ *         <h2 class="section-title">...</h2>
+ *         <p class="section-subtitle">...</p>
+ *         <button class="btn-download">Download for Android</button>
+ *         <p class="download-meta">...</p>
+ *       </div>
+ *     </div>
+ *   </section>
+ * 
+ * .btn-download can also appear in #hero .hero-text — same class, same behavior.
+ */
+
+#download {
+    text-align: center;
+}
+
+/* ── Animated Gradient Border Wrapper ── */
+.cta-card {
+    position: relative;
+    border-radius: 24px;
+    padding: 3px;
+    background: linear-gradient(
+        270deg,
+        var(--color-primary),
+        var(--color-secondary),
+        var(--color-accent),
+        var(--color-primary)
+    );
+    background-size: 400% 400%;
+    animation: border-rotate 6s ease infinite;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ── Inner Dark Card ── */
+.cta-card-inner {
+    background: var(--color-bg-mid);
+    border-radius: 22px;
+    padding: 60px 40px;
+}
+
+.cta-card-inner .section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Download Button ── */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 40px;
+    background: var(--color-accent);
+    color: #000;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
+    box-shadow:
+        0 0 20px var(--color-glow-amber),
+        0 4px 24px rgba(245, 158, 11, 0.25);
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 0 35px rgba(245, 158, 11, 0.6),
+        0 0 60px rgba(245, 158, 11, 0.3),
+        0 8px 32px rgba(245, 158, 11, 0.35);
+}
+
+.btn-download:active {
+    transform: translateY(1px) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.btn-download.downloading {
+    opacity: 0.75;
+    cursor: wait;
+    pointer-events: none;
+}
+
+/* Small download icon before text */
+.btn-download::before {
+    content: '⬇';
+    font-size: 1.2rem;
+}
+
+/* ── Meta Text Below Button ── */
+.download-meta {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+}

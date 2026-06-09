@@ -1,0 +1,104 @@
+/* === css/features.css === */
+/*
+ * Glassmorphism feature cards – now uses a flexible grid.
+ * You can add any number of .feature-card elements; the grid adapts.
+ * HTML expectations:
+ *   <section id="features" class="section">
+ *     <span class="section-eyebrow">...</span>
+ *     <h2 class="section-title">...</h2>
+ *     <p class="section-subtitle">...</p>
+ *     <div class="features-grid">
+ *       <div class="feature-card reveal-item">...</div>
+ *       ...
+ *     </div>
+ *   </section>
+ */
+
+#features {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/* Flexible grid: auto-fit with minimum 280px columns */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* ── Individual Glassmorphism Card ── */
+.feature-card {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-card);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    cursor: default;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 30px var(--color-glow-purple),
+        0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Card Content ── */
+.feature-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card .card-desc {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cursor-following glow (injected by tilt.js) */
+.card-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-glow-purple) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* ── Scroll Reveal ── */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform, opacity;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}

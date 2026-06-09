@@ -1,0 +1,80 @@
+/* === css/animations.css === */
+/*
+ * All @keyframes and animation-related styles.
+ * No @media queries here — they live in responsive.css.
+ */
+
+/* ── Rotating Gradient Border ── */
+@keyframes border-rotate {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ── Gentle Vertical Float ── */
+@keyframes float-y {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+/* ── Pulsing Glow Opacity ── */
+@keyframes pulse-glow {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ── Background Gradient Shift ── */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ── Slow 3D Spin ── */
+@keyframes spin-slow {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* ── Reduced Motion Override ── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .phone-wrapper {
+        animation: none !important;
+    }
+
+    .cta-card {
+        animation: none !important;
+    }
+}

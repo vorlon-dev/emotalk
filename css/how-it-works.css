@@ -1,0 +1,69 @@
+/* === css/how-it-works.css === */
+/*
+ * Styles for the "How It Works" steps section.
+ * HTML expectations:
+ *   <section id="how-it-works" class="section">
+ *     <span class="section-eyebrow">...</span>
+ *     <h2 class="section-title">...</h2>
+ *     <div class="steps-row">
+ *       <div class="step reveal-item">
+ *         <span class="step-number">01</span>
+ *         <h4>...</h4>
+ *         <p>...</p>
+ *       </div>
+ *       ...
+ *     </div>
+ *   </section>
+ */
+
+#how-it-works {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.steps-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1 1 250px;
+    max-width: 320px;
+    text-align: center;
+    padding: 24px 20px;
+    border-radius: var(--radius-card);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: transform var(--transition-smooth);
+}
+
+.step:hover {
+    transform: translateY(-4px);
+}
+
+.step-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0.35;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--color-text-main);
+}
+
+.step p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
