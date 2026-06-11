@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&family=Syne:wght@800&display=swap" rel="stylesheet">
 
-    <!-- CSS Files -->
+    <!-- CSS Files (order matters) -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/download.css">
     <link rel="stylesheet" href="css/feedback.css">
     <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/scrollbar.css">        <!-- ★ Custom scrollbar -->
+    <link rel="stylesheet" href="css/loader.css">          <!-- ★ Page loader -->
+    <link rel="stylesheet" href="css/scroll-top.css">      <!-- ★ Scroll to top button -->
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
 
@@ -29,6 +32,11 @@
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 </head>
 <body>
+    <!-- ★ Page Loader -->
+    <div id="page-loader">
+        <img src="assets/logo.svg" alt="Loading EmoTalk" class="loader-logo">
+    </div>
+
     <!-- ========== HERO SECTION ========== -->
     <section id="hero" class="section">
         <div class="hero-text">
@@ -160,6 +168,9 @@
         </div>
     </footer>
 
+    <!-- ★ Scroll to Top Button -->
+    <button id="scroll-to-top" title="Back to top">↑</button>
+
     <!-- Three.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -170,6 +181,8 @@
     <script src="js/tilt.js"></script>
     <script src="js/download.js"></script>
     <script src="js/feedback.js"></script>
-    <script src="js/privacy-guard.js"></script>
+    <script src="js/privacy-guard.js"></script>   <!-- ★ Security layer -->
+    <script src="js/loader.js"></script>          <!-- ★ Page loader -->
+    <script src="js/scroll-top.js"></script>      <!-- ★ Scroll to top -->
 </body>
 </html>

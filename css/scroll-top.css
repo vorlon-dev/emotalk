@@ -1,0 +1,33 @@
+/* === css/scroll-top.css === */
+/* Floating back‑to‑top button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 16px var(--color-glow-purple);
+    border: none;
+    cursor: pointer;
+    transform: translateY(20px);
+}
+#scroll-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+#scroll-to-top:hover {
+    background: var(--color-secondary);
+    box-shadow: 0 0 24px var(--color-glow-cyan);
+}

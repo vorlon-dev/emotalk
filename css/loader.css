@@ -1,0 +1,21 @@
+/* === css/loader.css === */
+/* Full‑screen loader that fades out after page load */
+#page-loader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.loader-logo {
+    width: 80px;
+    height: 80px;
+    animation: pulse-glow 1.5s ease infinite;
+}
