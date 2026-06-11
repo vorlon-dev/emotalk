@@ -16,9 +16,11 @@
             parentGroups.get(parent).push(item);
         });
 
+        // ★ Natural, slightly varied delays — not robotic
         parentGroups.forEach((items) => {
             items.forEach((item, index) => {
-                item.style.transitionDelay = `${index * 100}ms`;
+                const delay = index * 80 + Math.random() * 40; // 80ms base + random 0-40ms
+                item.style.transitionDelay = `${delay}ms`;
             });
         });
 

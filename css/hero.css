@@ -1,9 +1,4 @@
 /* === css/hero.css === */
-/*
- * Hero section with Android‑style phone mockup.
- * Phone size: 280×640 – matches the 7:16 aspect ratio of the app screenshots (700×1600).
- */
-
 #hero {
     min-height: 100vh;
     display: grid;
@@ -26,6 +21,40 @@
     margin-bottom: 8px;
 }
 
+/* ★ Animated gradient for the main title (living, breathing) */
+.section-title {
+    background: linear-gradient(
+        270deg,
+        var(--color-primary),
+        var(--color-secondary),
+        #c084fc,
+        var(--color-primary)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* Download count badge */
+.download-count {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+.count-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-accent);
+}
+.count-label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
 #hero .hero-phone {
     display: flex;
     justify-content: center;
@@ -34,9 +63,9 @@
     z-index: 3;
 }
 
-/* ── Android Phone Mockup (280×640, 7:16 ratio) ── */
+/* ── CSS Android Phone Mockup ── */
 .phone-wrapper {
-    width: 280px;
+    width: 300px;
     height: 640px;
     border-radius: 24px;
     border: 3px solid var(--color-primary);
@@ -54,10 +83,16 @@
         inset 0 0 40px rgba(124, 58, 237, 0.05);
     position: relative;
     animation: float-y 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
     z-index: 1;
 }
 
-/* ── Punch‑hole camera ── */
+/* Subtle 3D tilt on hover (feels tangible) */
+.phone-wrapper:hover {
+    transform: perspective(800px) rotateY(-3deg) rotateX(2deg) translateY(-4px);
+}
+
+/* Punch‑hole camera */
 .phone-wrapper::before {
     content: '';
     position: absolute;
@@ -72,7 +107,7 @@
     z-index: 3;
 }
 
-/* ── Inner screen glow ── */
+/* Inner screen glow */
 .phone-wrapper::after {
     content: '';
     position: absolute;

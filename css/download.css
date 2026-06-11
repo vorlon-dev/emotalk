@@ -1,27 +1,8 @@
 /* === css/download.css === */
-/*
- * CTA download section with animated gradient border card.
- * HTML expectations:
- *   <section id="download" class="section">
- *     <div class="cta-card">
- *       <div class="cta-card-inner">
- *         <span class="section-eyebrow">...</span>
- *         <h2 class="section-title">...</h2>
- *         <p class="section-subtitle">...</p>
- *         <button class="btn-download">Download for Android</button>
- *         <p class="download-meta">...</p>
- *       </div>
- *     </div>
- *   </section>
- * 
- * .btn-download can also appear in #hero .hero-text — same class, same behavior.
- */
-
 #download {
     text-align: center;
 }
 
-/* ── Animated Gradient Border Wrapper ── */
 .cta-card {
     position: relative;
     border-radius: 24px;
@@ -39,7 +20,6 @@
     margin: 0 auto;
 }
 
-/* ── Inner Dark Card ── */
 .cta-card-inner {
     background: var(--color-bg-mid);
     border-radius: 22px;
@@ -51,7 +31,7 @@
     margin-right: auto;
 }
 
-/* ── Download Button ── */
+/* ── Download button with ripple effect ── */
 .btn-download {
     display: inline-flex;
     align-items: center;
@@ -65,7 +45,8 @@
     border: none;
     border-radius: var(--radius-pill);
     cursor: pointer;
-    transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease;
     box-shadow:
         0 0 20px var(--color-glow-amber),
         0 4px 24px rgba(245, 158, 11, 0.25);
@@ -73,6 +54,17 @@
     z-index: 2;
     white-space: nowrap;
     text-decoration: none;
+    overflow: hidden;
+}
+
+/* Ripple highlight on hover */
+.btn-download::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .btn-download:hover {
@@ -81,6 +73,10 @@
         0 0 35px rgba(245, 158, 11, 0.6),
         0 0 60px rgba(245, 158, 11, 0.3),
         0 8px 32px rgba(245, 158, 11, 0.35);
+}
+
+.btn-download:hover::after {
+    opacity: 1;
 }
 
 .btn-download:active {
@@ -94,13 +90,11 @@
     pointer-events: none;
 }
 
-/* Small download icon before text */
 .btn-download::before {
     content: '⬇';
     font-size: 1.2rem;
 }
 
-/* ── Meta Text Below Button ── */
 .download-meta {
     margin-top: 14px;
     font-size: 0.8rem;

@@ -1,0 +1,67 @@
+/* === css/reviews.css === */
+#reviews {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* Rating summary badge (used in multiple places) */
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-bottom: 24px;
+}
+.rating-badge .stars {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* Reviews grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+}
+.review-card {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px var(--color-glow-purple);
+}
+.review-card .review-stars {
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+.review-card .review-text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+.review-card .review-author {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+}
