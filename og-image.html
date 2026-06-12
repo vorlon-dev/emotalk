@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, height=630, initial-scale=1.0">
+    <title>EmoTalk OG Image</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 30% 50%, rgba(124,58,237,0.25) 0%, #050810 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            color: #F1F5F9;
+            position: relative;
+        }
+
+        /* Floating blur orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .orb-1 {
+            width: 400px; height: 400px;
+            background: #7C3AED;
+            top: -100px; left: -100px;
+        }
+        .orb-2 {
+            width: 300px; height: 300px;
+            background: #06B6D4;
+            bottom: -80px; right: -80px;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 48px 64px;
+            border-radius: 40px;
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 0 60px rgba(124,58,237,0.3);
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #7C3AED, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #94A3B8;
+            max-width: 700px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 24px;
+            background: rgba(245,158,11,0.15);
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 999px;
+            color: #F59E0B;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="card">
+        <img src="assets/logo.svg" alt="EmoTalk" class="logo">
+        <h1>Chat with Heart.</h1>
+        <p>Private messaging with voice notes, stories, 8 themes, and biometric lock. No ads, no trackers.</p>
+        <span class="tag">📲 Download for Android</span>
+    </div>
+</body>
+</html>
