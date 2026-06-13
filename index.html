@@ -26,13 +26,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&family=Syne:wght@800&display=swap" rel="stylesheet">
 
-    <!-- CSS Files (order matters) -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/video.css">          <!-- ★ Auto‑playing video -->
     <link rel="stylesheet" href="css/how-it-works.css">
     <link rel="stylesheet" href="css/download.css">
     <link rel="stylesheet" href="css/feedback.css">
@@ -123,6 +124,23 @@
         </div>
     </section>
 
+    <!-- ========== VIDEO SECTION (auto‑playing, no click) ========== -->
+    <section id="video-section" class="section">
+        <span class="section-eyebrow">See it in action</span>
+        <h2 class="section-title">Watch the magic</h2>
+        <div class="video-container">
+            <video
+                src="assets/demo.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                aria-label="EmoTalk demo video"
+            ></video>
+        </div>
+    </section>
+
     <!-- ========== HOW IT WORKS SECTION ========== -->
     <section id="how-it-works" class="section">
         <span class="section-eyebrow">Simple setup</span>
@@ -199,5 +217,6 @@
     <script src="js/privacy-guard.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/scroll-top.js"></script>
+    <!-- No video-modal.js needed -->
 </body>
 </html>
